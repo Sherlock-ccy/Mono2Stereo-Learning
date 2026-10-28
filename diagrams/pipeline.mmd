@@ -1,0 +1,10 @@
+flowchart TD
+  A[输入单目视频] --> B[视频深度估计]
+  B --> C[深度/视差归一化]
+  C --> D[Forward Splatting]
+  A --> D
+  D --> E[Warped Right + Coverage Mask]
+  E --> F[Video Inpainting]
+  A --> F
+  F --> G[输出右眼]
+  G --> H[左右双目拼接]
